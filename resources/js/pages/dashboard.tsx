@@ -1,7 +1,6 @@
 import { Head } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-// import { label } from '@/components/ui/label';
 import { dashboard } from '@/routes';
 import { useForm } from '@inertiajs/react';
 
@@ -19,7 +18,7 @@ export default function Dashboard() {
     
         return (
         <>
-            <Head title="Dashboard" />
+            <Head title="Appointments" />
 
             <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
                 <div> 

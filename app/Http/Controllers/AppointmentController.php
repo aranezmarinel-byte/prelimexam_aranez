@@ -17,13 +17,6 @@ class AppointmentController extends Controller
     }
 
    
-    public function create()
-    {
-        return view('appointments.create');
-    
-    }
-
-   
     public function store(Request $request)
     {
         $request->validate([
@@ -35,7 +28,7 @@ class AppointmentController extends Controller
         ]);
 
         Appointment::create($request->all());
-        return redirect()->route('appointments.index');
+        return redirect()->route('dashboard');
         
     }
 
@@ -49,11 +42,6 @@ class AppointmentController extends Controller
     }
 
     
-    public function edit(Appointment $appointment)
-    {
-        
-    }
-
     public function update(Request $request, Appointment $appointment)
     {
         $request->validate([
@@ -65,12 +53,12 @@ class AppointmentController extends Controller
         ]);
 
         $appointment->update($request->all());
-        return redirect()->route('appointments.index');
+        return redirect()->route('dashboard');
     }
 
     public function destroy(Appointment $appointment)
     {
         $appointment->delete();
-        return redirect()->route('appointments.index');
+        return redirect()->route('dashboard');
     }
 }

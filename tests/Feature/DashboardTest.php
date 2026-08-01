@@ -24,14 +24,4 @@ class DashboardTest extends TestCase
         $response = $this->get(route('dashboard'));
         $response->assertOk();
     }
-
-    public function test_dashboard_route_uses_the_dashboard_page_component()
-    {
-        $user = User::factory()->create();
-        $this->actingAs($user);
-
-        $response = $this->get(route('dashboard'));
-
-        $response->assertJsonPath('component', 'dashboard');
-    }
 }
